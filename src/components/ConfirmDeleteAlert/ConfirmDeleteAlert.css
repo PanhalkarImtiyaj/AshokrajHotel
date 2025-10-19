@@ -1,0 +1,268 @@
+.confirm-delete-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  backdrop-filter: blur(4px);
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.confirm-delete-modal {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  max-width: 500px;
+  width: 90%;
+  max-height: 90vh;
+  overflow: hidden;
+  animation: slideUp 0.3s ease-out;
+  position: relative;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.confirm-delete-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 24px 16px 24px;
+  border-bottom: 1px solid #fee2e2;
+  background: linear-gradient(135deg, #fef2f2 0%, #fecaca 100%);
+}
+
+.confirm-delete-icon {
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, #fecaca 0%, #dc2626 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.5rem;
+}
+
+.confirm-delete-close {
+  background: none;
+  border: none;
+  color: #64748b;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.confirm-delete-close:hover {
+  background: rgba(255, 255, 255, 0.8);
+  color: #334155;
+}
+
+.confirm-delete-content {
+  padding: 20px 24px;
+}
+
+.confirm-delete-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #dc2626;
+  margin: 0 0 12px 0;
+  line-height: 1.4;
+}
+
+.confirm-delete-message {
+  font-size: 1rem;
+  color: #64748b;
+  margin: 0 0 20px 0;
+  line-height: 1.6;
+}
+
+.confirm-delete-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+.delete-item-icon {
+  color: #dc2626;
+  font-size: 1.1rem;
+}
+
+.confirm-delete-item span {
+  color: #374151;
+  font-size: 0.95rem;
+}
+
+.confirm-delete-input-section {
+  margin-bottom: 20px;
+}
+
+.confirm-delete-label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 8px;
+}
+
+.confirm-delete-input {
+  width: 100%;
+  padding: 14px 16px;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-family: 'Courier New', monospace;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.confirm-delete-input:focus {
+  outline: none;
+  border-color: #dc2626;
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+}
+
+.confirm-delete-input.error {
+  border-color: #ef4444;
+  background: #fef2f2;
+}
+
+.confirm-delete-error {
+  color: #ef4444;
+  font-size: 0.85rem;
+  margin-top: 6px;
+  font-weight: 500;
+}
+
+.confirm-delete-actions {
+  display: flex;
+  gap: 12px;
+  padding: 0 24px 24px 24px;
+  justify-content: center;
+}
+
+.confirm-delete-btn {
+  flex: 1;
+  padding: 14px 24px;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-height: 50px;
+  max-width: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.confirm-delete-cancel {
+  background: #f8fafc;
+  color: #64748b;
+  border: 2px solid #e2e8f0;
+}
+
+.confirm-delete-cancel:hover {
+  background: #f1f5f9;
+  border-color: #cbd5e1;
+  color: #475569;
+  transform: translateY(-1px);
+}
+
+.confirm-delete-confirm {
+  border: 2px solid #dc2626;
+}
+
+.confirm-delete-confirm.enabled {
+  background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+  color: white;
+}
+
+.confirm-delete-confirm.enabled:hover {
+  background: linear-gradient(135deg, #b91c1c 0%, #991b1b 100%);
+  border-color: #b91c1c;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(220, 38, 38, 0.3);
+}
+
+.confirm-delete-confirm.disabled {
+  background: #f3f4f6;
+  color: #9ca3af;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.confirm-delete-confirm.disabled:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+/* Mobile responsive */
+@media (max-width: 480px) {
+  .confirm-delete-modal {
+    margin: 20px;
+    width: calc(100% - 40px);
+  }
+  
+  .confirm-delete-header {
+    padding: 20px 20px 12px 20px;
+  }
+  
+  .confirm-delete-content {
+    padding: 16px 20px;
+  }
+  
+  .confirm-delete-actions {
+    padding: 0 20px 20px 20px;
+    flex-direction: column;
+  }
+  
+  .confirm-delete-btn {
+    max-width: none;
+    width: 100%;
+  }
+  
+  .confirm-delete-title {
+    font-size: 1.2rem;
+  }
+  
+  .confirm-delete-message {
+    font-size: 0.95rem;
+  }
+  
+  .confirm-delete-input {
+    font-size: 0.95rem;
+  }
+}

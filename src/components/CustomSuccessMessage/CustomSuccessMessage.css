@@ -1,0 +1,242 @@
+.success-message-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  backdrop-filter: blur(4px);
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.success-message-modal {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  max-width: 450px;
+  width: 90%;
+  max-height: 90vh;
+  overflow: hidden;
+  animation: slideUp 0.3s ease-out;
+  position: relative;
+  border: 2px solid #f1f5f9;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(30px) scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+.success-message-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 24px 16px 24px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.success-message-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.8rem;
+}
+
+.success-message-default .success-message-icon {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+}
+
+.success-message-room .success-message-icon {
+  background: linear-gradient(135deg, #FF6B35 0%, #E55A2B 100%);
+}
+
+.success-message-booking .success-message-icon {
+  background: linear-gradient(135deg, #FF6B35 0%, #E55A2B 100%);
+}
+
+.success-message-close {
+  background: none;
+  border: none;
+  color: #64748b;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.success-message-close:hover {
+  background: #f1f5f9;
+  color: #334155;
+}
+
+.success-message-content {
+  padding: 16px 24px 24px 24px;
+  text-align: center;
+}
+
+.success-message-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin: 0 0 12px 0;
+  line-height: 1.4;
+}
+
+.success-message-default .success-message-title {
+  color: #10b981;
+}
+
+.success-message-room .success-message-title {
+  color: #FF6B35;
+}
+
+.success-message-booking .success-message-title {
+  color: #FF6B35;
+}
+
+.success-message-text {
+  font-size: 1rem;
+  color: #64748b;
+  margin: 0 0 20px 0;
+  line-height: 1.6;
+}
+
+.success-message-timer {
+  width: 100%;
+  height: 4px;
+  background: #f1f5f9;
+  border-radius: 2px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.timer-bar {
+  height: 100%;
+  border-radius: 2px;
+  animation: timerProgress 3s linear forwards;
+}
+
+.success-message-default .timer-bar {
+  background: linear-gradient(90deg, #10b981 0%, #059669 100%);
+}
+
+.success-message-room .timer-bar {
+  background: linear-gradient(90deg, #FF6B35 0%, #E55A2B 100%);
+}
+
+.success-message-booking .timer-bar {
+  background: linear-gradient(90deg, #FF6B35 0%, #E55A2B 100%);
+}
+
+@keyframes timerProgress {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  }
+}
+
+.success-message-actions {
+  display: flex;
+  justify-content: center;
+  padding: 0 24px 24px 24px;
+}
+
+.success-message-btn {
+  padding: 12px 32px;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 100px;
+  color: white;
+}
+
+.success-message-default .success-message-btn {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+}
+
+.success-message-room .success-message-btn {
+  background: linear-gradient(135deg, #FF6B35 0%, #E55A2B 100%);
+}
+
+.success-message-booking .success-message-btn {
+  background: linear-gradient(135deg, #FF6B35 0%, #E55A2B 100%);
+}
+
+.success-message-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.success-message-default .success-message-btn:hover {
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+.success-message-room .success-message-btn:hover {
+  box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+}
+
+.success-message-booking .success-message-btn:hover {
+  box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+}
+
+/* Mobile responsive */
+@media (max-width: 480px) {
+  .success-message-modal {
+    margin: 20px;
+    width: calc(100% - 40px);
+  }
+  
+  .success-message-header {
+    padding: 20px 20px 12px 20px;
+  }
+  
+  .success-message-content {
+    padding: 12px 20px 20px 20px;
+  }
+  
+  .success-message-actions {
+    padding: 0 20px 20px 20px;
+  }
+  
+  .success-message-title {
+    font-size: 1.2rem;
+  }
+  
+  .success-message-text {
+    font-size: 0.95rem;
+  }
+  
+  .success-message-icon {
+    width: 48px;
+    height: 48px;
+    font-size: 1.5rem;
+  }
+}
